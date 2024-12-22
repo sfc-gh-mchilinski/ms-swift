@@ -66,7 +66,7 @@ def handle_modules_to_save(model, args: SftArguments) -> None:
 def apply_liger(model_type: str):
     from liger_kernel.transformers import (apply_liger_kernel_to_llama, apply_liger_kernel_to_mistral,
                                            apply_liger_kernel_to_mixtral, apply_liger_kernel_to_gemma,
-                                           apply_liger_kernel_to_qwen2)
+                                           apply_liger_kernel_to_qwen2, apply_liger_kernel_to_qwen2_vl)
     if 'llama3' in model_type:
         apply_liger_kernel_to_llama()
     elif 'mistral' in model_type:
@@ -75,6 +75,8 @@ def apply_liger(model_type: str):
         apply_liger_kernel_to_mixtral()
     elif 'gemma' in model_type:
         apply_liger_kernel_to_gemma()
+    elif 'qwen2-vl' in model_type:
+        apply_liger_kernel_to_qwen2_vl()
     elif 'qwen2' in model_type:
         apply_liger_kernel_to_qwen2()
     else:
